@@ -1,0 +1,135 @@
+from IPython.core.display import display, HTML
+
+html_code = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Service Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="text"], input[type="email"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function showMessage(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            document.querySelector('.container').innerHTML = '<h2>Request Submitted</h2><p>Your request for a quote has been sent. We will contact you shortly.</p>';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Service Ticket Request</h2>
+        <form id="serviceTicketForm" onsubmit="showMessage(event)">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+
+<label for="serviceType">Type of Service</label>
+<select id="serviceType" name="serviceType" required>
+    <option value="">Select a service</option>
+    <option value="plumbing">Plumbing</option>
+    <option value="electrical">Electrical</option>
+    <option value="landscaping">Landscaping</option>
+    <option value="cleaning">Cleaning</option>
+    <option value="other">Other</option>
+</select>
+
+<label for="contactMethod">Preferred Contact Method</label>
+<select id="contactMethod" name="contactMethod" required>
+    <option value="email">Email</option>
+    <option value="phone">Phone</option>
+</select>
+
+<label for="contactTime">Preferred Contact Time</label>
+<input type="text" id="contactTime" name="contactTime" placeholder="e.g., Morning, Afternoon, Evening" required>
+
+<label for="address">Service Address</label>
+<input type="text" id="address" name="address" required>
+
+<label for="urgency">Urgency Level</label>
+<select id="urgency" name="urgency" required>
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+</select>
+
+time_limit_html = """
+html_code = """
+<label for="timeLimit">Time Limit Level</label>
+<select id="timeLimit" name="timeLimit" onchange="toggleCustomTimeLimit()" required>
+    <option value="1 week">1 week</option>
+    <option value="3 weeks">3 weeks</option>
+    <option value="30 days">30 days</option>
+    <option value="Custom">Custom</option>
+</select>
+
+<!-- Custom input for time limit -->
+<input type="text" id="customTimeLimit" name="customTimeLimit" placeholder="Enter custom time limit" style="display: none;">
+"""
+
+# Display the HTML in a Jupyter notebook or Google Colab
+from IPython.core.display import display, HTML
+display(HTML(time_limit_html))
+
+
+<label for="additionalComments">Additional Comments</label>
+<textarea id="additionalComments" name="additionalComments" rows="3"></textarea>
+
+            <input type="submit" value="Request Quote">
+        </form>
+    </div>
+</body>
+</html>
+"""
+
+display(HTML(html_code))
